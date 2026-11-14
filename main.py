@@ -1,10 +1,11 @@
 import random
 
-print("🌷 Welcome to Ai's Little Garden 🌷")
+print("Welcome to Little Garden 🌷")
 
 name = input("What is your name? ")
 
 flowers = ["Tulip 🌷", "Sunflower 🌻", "Daisy 🌼", "Sakura 🌸", "Rose 🌹", "Lavender 🪻"]
+garden = []
 
 print(f"\nHello, {name}! Welcome home. 💗")
 print("\nYour garden has:")
@@ -12,7 +13,7 @@ print("\nYour garden has:")
 for flower in flowers:
     print(f"- {flower}")
 
-print("\n✨ Today's special flower:")
+print("\n Today's special flower:")
 print(random.choice(flowers))
 print("\n🌱 Which flower would you like to plant?")
 
@@ -26,10 +27,11 @@ if choice.isdigit():
 
     if 1 <= number <= len(flowers):
         planted_flower = flowers[number - 1]
+        garden.append(planted_flower)
 
         print(f"\nYou planted {planted_flower} 💗")
 
-        water = input("Would you like to water it? (y/n): ").lower()
+        water = input("Would you like to water it? (y/n): ").strip().lower() 
 
         if water == "y":
             print(f"You watered {planted_flower} 💧")
@@ -46,4 +48,11 @@ if choice.isdigit():
 
 else:
     print("Please enter a number only!")
+    
+print("\n Your Garden Collection 🌷")
+
+for flower in garden:
+    print(f"- {flower}")
+
+print(f"Total flowers: {len(garden)} ")
     
